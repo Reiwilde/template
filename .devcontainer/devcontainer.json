@@ -1,0 +1,30 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.205.2/containers/ubuntu
+{
+  "build": {
+    "args": {
+      "EMAIL": "${localEnv:DEV_EMAIL}",
+      "NAME": "${localEnv:DEV_NAME}",
+      "PGP_KEY": "${localEnv:DEV_PGP_KEY}"
+    },
+    "dockerfile": "Dockerfile"
+  },
+  "containerEnv": {
+    "NPM_TOKEN": "${localEnv:DEV_NPM_TOKEN}"
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "editorconfig.editorconfig",
+    "ms-azuretools.vscode-docker",
+    "rangav.vscode-thunder-client"
+  ],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  "name": "dev",
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "uname -a",
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "user",
+  // Set *default* container specific settings.json values on container create.
+  "settings": {}
+}
