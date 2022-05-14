@@ -14,6 +14,7 @@ apt-get -y install --no-install-recommends python3
 su $USERNAME -s /bin/bash -c "\
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
   && source /home/$USERNAME/.nvm/nvm.sh \
-  && nvm install lts/* \
-  && npm install --global npm@latest yarn@latest \
-  && nvm alias default lts/*"
+  && nvm install stable \
+  && npm install --global npm@latest \
+  && corepack enable \
+  && nvm alias default stable"
